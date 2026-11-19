@@ -14,16 +14,19 @@
   <header class="site-header site-header--home">
     <div class="container">
       <a class="logo" href="index.html"><span class="logo-mark"></span>Calico Media</a>
-      <nav aria-label="Main">
-        <ul class="nav-links">
+      <nav class="main-nav" aria-label="Main">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-menu">
           <li><a href="features.html">Features</a></li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="#playbook">Growth playbook</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="https://app.calicomedia.co/login">Log in</a></li>
-          <li><a class="btn" href="contact.html">Book a demo</a></li>
         </ul>
+        <a class="btn nav-cta" href="contact.html">Book a demo</a>
       </nav>
     </div>
   </header>
@@ -188,5 +191,7 @@
       </div>
     </div>
   </footer>
+
+  <script src="js/nav.js"></script>
 </body>
 </html>
