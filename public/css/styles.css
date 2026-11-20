@@ -1,4 +1,6 @@
 /* Calico Media marketing site */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,700;1,14..32,700&display=swap');
 
 :root {
   --ink: #1f1a17;
@@ -228,7 +230,6 @@ img {
   white-space: nowrap;
 }
 
-/* Hamburger button, hidden until the 920px breakpoint */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -260,7 +261,6 @@ img {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* Bars turn into an X when open (5px gap + 2px bar = 7px) */
 .nav-toggle[aria-expanded='true'] span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -451,7 +451,7 @@ img {
 
 .playbook-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
 }
 
@@ -885,10 +885,6 @@ img {
 
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .playbook-grid {
-    grid-template-columns: 1fr;
   }
 
   .contact-layout {
