@@ -1,6 +1,4 @@
 /* Calico Media marketing site */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,700;1,14..32,700&display=swap');
 
 :root {
   --ink: #1f1a17;
@@ -19,6 +17,22 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2'); 
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter-v20-latin-700.woff2') format('woff2'); 
 }
 
 body {
