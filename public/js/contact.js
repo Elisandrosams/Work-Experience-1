@@ -1,8 +1,24 @@
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
+const honeypotInput = document.getElementById('honeypot');
+const startTime = performance.now();
+const durationInput = document.getElementById('time-to-submit');
 
 form.addEventListener('submit', async (event) => {
-  event.preventDefault();
+  const endTime = performance.now() - startTime;
+  const duration = (endTime / 1000).toFixed(2); 
+  durationInput.value = duration;
+
+  const honeypotTriggered = honeypotInput.value !== '';
+
+  if ((endTime < 3000) || honeypotTriggered) {
+    event.preventDefault();
+    statusEl.textContent = "Thanks, we'll be in touch within one business day.";
+    statusEl.classList.add('form-status--success');
+    
+    return;
+  }
+  
 
   const button = form.querySelector('button[type="submit"]');
   button.disabled = true;
@@ -10,6 +26,7 @@ form.addEventListener('submit', async (event) => {
   statusEl.className = 'form-status';
 
   const data = Object.fromEntries(new FormData(form));
+  
 
   try {
     const response = await fetch('/contact', {
@@ -32,4 +49,5 @@ form.addEventListener('submit', async (event) => {
   } finally {
     button.disabled = false;
   }
+  console.log(`Form submitted by human in ${duration} seconds. Honeypot triggered: ${honeypotTriggered}`);
 });
