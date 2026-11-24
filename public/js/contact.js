@@ -5,6 +5,7 @@ const startTime = performance.now();
 const durationInput = document.getElementById('time-to-submit');
 
 form.addEventListener('submit', async (event) => {
+  event.preventDefault();
   const endTime = performance.now() - startTime;
   const duration = (endTime / 1000).toFixed(2); 
   durationInput.value = duration;
@@ -12,7 +13,7 @@ form.addEventListener('submit', async (event) => {
   const honeypotTriggered = honeypotInput.value !== '';
 
   if ((endTime < 3000) || honeypotTriggered) {
-    event.preventDefault();
+    statusEl.className = 'form-status';
     statusEl.textContent = "Thanks, we'll be in touch within one business day.";
     statusEl.classList.add('form-status--success');
     
@@ -49,5 +50,5 @@ form.addEventListener('submit', async (event) => {
   } finally {
     button.disabled = false;
   }
-  console.log(`Form submitted by human in ${duration} seconds. Honeypot triggered: ${honeypotTriggered}`);
+  
 });
