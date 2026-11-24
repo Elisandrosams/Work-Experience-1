@@ -14,6 +14,7 @@ form.addEventListener('submit', async (event) => {
 
   if ((endTime < 3000) || honeypotTriggered) {
     statusEl.className = 'form-status';
+    form.reset();
     statusEl.textContent = "Thanks, we'll be in touch within one business day.";
     statusEl.classList.add('form-status--success');
     

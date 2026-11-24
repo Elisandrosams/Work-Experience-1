@@ -726,6 +726,10 @@ img {
   color: var(--teal);
 }
 
+.honeypot {
+  display: none !important;
+}
+
 .form-status--error {
   color: #b3261e;
 }
